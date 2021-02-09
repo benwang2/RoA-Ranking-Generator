@@ -3,7 +3,7 @@
 </p>
 
 # RoA-Leaderboard-Generator
-A web-application that generates a leaderboard using the font and graphics from the video game [Rivals of Aether](https://rivalsofaether.com/). Try it out [here](https://benwang2.github.io/pr-generator/)!
+A web-application that generates a leaderboard using the font and graphics from the video game [Rivals of Aether](https://rivalsofaether.com/). Try it out [here](https://benwang2.github.io/RoA-Ranking-Generator/)!
 
 # How does it work?
 A template image is pasted onto the canvas, which serves as the backdrop.
