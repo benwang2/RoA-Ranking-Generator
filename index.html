@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel = "stylesheet" href="assets/stylesheet.css">
+        <script>
+            let numRows = 0
+            function generateNewRow(){
+                if (numRows<15){
+                    numRows++
+                    let clone=document.getElementsByClassName('row-base')[0].cloneNode(true);
+                    clone.children.item(0).innerHTML = numRows
+                    clone.style = "";
+                    clone.setAttribute("id", "row-"+numRows)
+                    for (let i = 0; i < clone.childNodes.length; i++){
+                        let child = clone.childNodes[i]
+                        if (child.childNodes.length > 0){
+                            child = child.childNodes[0];
+                            child.id = child.id+"-"+numRows
+                        }
+                        
+                    }
+                    document.getElementById('data-container').appendChild(clone)
+                }
+            }
+            function deleteNewestRow(){
+                if (numRows > 0){
+                    let rows = document.getElementsByClassName('row-base')
+                    rows[rows.length-1].remove()
+                    numRows--
+                }
+            }
+        </script>
+        <script src="scripts/prgenerator.js"></script>
+    </head>
+    <table  id="data-entry">
+        <thead>
+            <tr>
+                <td>rank</td>
+                <td>name</td>
+                <td>main</td>
+                <td>secondary</td>
+                <td>rank delta</td>
+            </tr>
+        </thead>
+        <tbody id="data-container">
+            <tr class="row-base" style="display: none" value="0">
+                <td><p>0</p></td>
+                <td><input type="text" id="row-name" value="" style="text-align: center;"></td>
+                <td><select id="row-main">
+                    <option value="zetterburn">zetterburn</option>
+                    <option value="orcane">orcane</option>
+                    <option value="kragg">kragg</option>
+                    <option value="wrastor">wrastor</option>
+                </select></td>
+                <td><select id="row-secondary">
+                    <option value="zetterburn">none</option>
+                    <option value="zetterburn">zetterburn</option>
+                    <option value="orcane">orcane</option>
+                    <option value="kragg">kragg</option>
+                    <option value="wrastor">wrastor</option>
+                </select></td>
+                <td><input type="text" id="row-rank-delta" value="" style="text-align: center;"></td>
+            </tr>
+        </tbody>
+    </table>
+    pr title <input type="text" id="pr-title" value="" style="text-align: center;"></ul>
+    <button type="submit" onclick="generateNewRow()">new row</button>
+    <button type="submit" onclick="deleteNewestRow()">del row</button>
+    <button type="submit" onclick="generatePRImage()">generate</button>
+    <hr>
+    <canvas id="pr-canvas" width="1082" height="947" style="border:1px solid #000000;"></canvas>
+</html>
