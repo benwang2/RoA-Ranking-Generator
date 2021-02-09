@@ -1,11 +1,6 @@
 table, th, td, tr {
     border: 1px solid black;
     text-align: center;
-    width: 20%;
-}
-
-table {
-    width: 50%;
 }
 
 button {

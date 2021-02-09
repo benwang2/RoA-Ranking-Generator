@@ -13,16 +13,16 @@
                     for (let i = 0; i < clone.childNodes.length; i++){
                         let child = clone.childNodes[i]
                         if (child.childNodes.length > 0){
-                            child = child.childNodes[0];
-                            child.id = child.id+"-"+numRows
+                            for (let j = 0; j < child.childNodes.length; j++){
+                                child.childNodes[j].id += "-"+numRows;
+                            }
                         }
-                        
                     }
                     document.getElementById('data-container').appendChild(clone)
                 }
             }
             function deleteNewestRow(){
-                if (numRows > 0){
+                if (numRows > 1){
                     let rows = document.getElementsByClassName('row-base')
                     rows[rows.length-1].remove()
                     numRows--
@@ -42,23 +42,47 @@
             </tr>
         </thead>
         <tbody id="data-container">
-            <tr class="row-base" style="display: none" value="0">
+            <tr class="row-base" style="display: none" value="0">  <!--  -->
                 <td><p>0</p></td>
                 <td><input type="text" id="row-name" value="" style="text-align: center;"></td>
                 <td><select id="row-main">
-                    <option value="zetterburn">zetterburn</option>
-                    <option value="orcane">orcane</option>
-                    <option value="kragg">kragg</option>
-                    <option value="wrastor">wrastor</option>
+                    <option value="zetterburn">Zetterburn</option>
+                    <option value="orcane">Orcane</option>
+                    <option value="wrastor">Wrastor</option>
+                    <option value="kragg">Kragg</option>
+                    <option value="forsburn">Forsburn</option>
+                    <option value="maypul">Maypul</option>
+                    <option value="absa">Absa</option>
+                    <option value="etalus">Etalus</option>
+                    <option value="ori">Ori and Sein</option>
+                    <option value="clairen">Clairen</option>
+                    <option value="sylvanos">Sylvanos</option>
+                    <option value="elliana">Elliana</option>
+                    <option value="shovel knight">Shovel Knight</option>
                 </select></td>
                 <td><select id="row-secondary">
-                    <option value="zetterburn">none</option>
-                    <option value="zetterburn">zetterburn</option>
-                    <option value="orcane">orcane</option>
-                    <option value="kragg">kragg</option>
-                    <option value="wrastor">wrastor</option>
+                    <option value="none">None</option>
+                    <option value="zetterburn">Zetterburn</option>
+                    <option value="orcane">Orcane</option>
+                    <option value="wrastor">Wrastor</option>
+                    <option value="kragg">Kragg</option>
+                    <option value="forsburn">Forsburn</option>
+                    <option value="maypul">Maypul</option>
+                    <option value="absa">Absa</option>
+                    <option value="etalus">Etalus</option>
+                    <option value="ori">Ori and Sein</option>
+                    <option value="clairen">Clairen</option>
+                    <option value="sylvanos">Sylvanos</option>
+                    <option value="elliana">Elliana</option>
+                    <option value="shovel knight">Shovel Knight</option>
                 </select></td>
-                <td><input type="text" id="row-rank-delta" value="" style="text-align: center;"></td>
+                <td style="align-items: flex-start;"><select id="row-rank-sign">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="new">new</option>
+                    </select>
+                    <input type="number" id="row-rank-delta" value="0" min="0" style="text-align: center;">
+                </td>
             </tr>
         </tbody>
     </table>
