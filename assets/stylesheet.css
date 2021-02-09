@@ -1,0 +1,19 @@
+table, th, td, tr {
+    border: 1px solid black;
+    text-align: center;
+    width: 20%;
+}
+
+table {
+    width: 50%;
+}
+
+button {
+    align-self: flex-start;
+}
+
+canvas {
+    position: sticky;
+    right: 30px;
+    border: 3px;
+}
