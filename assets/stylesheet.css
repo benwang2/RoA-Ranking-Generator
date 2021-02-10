@@ -3,6 +3,11 @@ table, th, td, tr {
     text-align: center;
 }
 
+td td:last-child{
+    width: 1%;
+    white-space: nowrap;
+}
+
 button {
     align-self: flex-start;
 }

@@ -134,9 +134,9 @@ function generatePRImage(){
         for (let i = 1; i < rows.length; i++){
             setCellNameText(i-1, document.getElementById("row-name-"+i).value)
             let main = document.getElementById("row-main-"+i)
-            setCellMain(i-1, main.options[main.selectedIndex].text)
+            setCellMain(i-1, main.options[main.selectedIndex].value)
             let secondary = document.getElementById("row-secondary-"+i) 
-            setCellSecondary(i-1, secondary.options[secondary.selectedIndex].text)
+            setCellSecondary(i-1, secondary.options[secondary.selectedIndex].value)
             let change = document.getElementById("row-rank-sign-"+i)
             change = change.options[change.selectedIndex].text
             let delta = document.getElementById("row-rank-delta-"+i).value
